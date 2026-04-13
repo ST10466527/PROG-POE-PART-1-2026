@@ -17,7 +17,7 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v3
       with:
-        dotnet-version: '8.0.x'   # Change if your project uses 6.0 or 7.0
+        dotnet-version: '8.0.x'   # Change to 6.0.x or 7.0.x if your project targets that version
 
     - name: Restore dependencies
       run: dotnet restore "PROG POE PART 1/PROG POE PART 1.csproj"
@@ -25,5 +25,14 @@ jobs:
     - name: Build project
       run: dotnet build "PROG POE PART 1/PROG POE PART 1.csproj" --no-restore --configuration Release
 
+    # Comment out this section if you don’t have tests yet
+    - name: Run tests
+      run: dotnet test "PROG POE PART 1/PROG POE PART 1.csproj" --no-build --verbosity normal
+      run: dotnet restore "PROG POE PART 1/PROG POE PART 1.csproj"
+
+    - name: Build project
+      run: dotnet build "PROG POE PART 1/PROG POE PART 1.csproj" --no-restore --configuration Release
+
+    # Comment out this section if you don’t have tests yet
     - name: Run tests
       run: dotnet test "PROG POE PART 1/PROG POE PART 1.csproj" --no-build --verbosity normal
