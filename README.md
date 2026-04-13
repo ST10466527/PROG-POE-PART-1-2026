@@ -126,6 +126,9 @@ jobs:
 <img width="1919" height="1023" alt="Screenshot 2026-04-13 200607" src="https://github.com/user-attachments/assets/2fbf864e-ee9f-4136-b9f9-db05b1f76903" />
 
 ---
+## Presentation Video
+Watch the full code presentation here:  
+[CyberSecurity Awareness Bot – Code Presentation](https://youtu.be/Fo_LJVQBa_U)
 
 ## Challenges and Learning Outcomes
 During development, several challenges were encountered:
@@ -168,7 +171,7 @@ Cape Town, South Africa
 
 ---
 
-## 🏁 Final Notes
+## Final Notes
 This project demonstrates the **practical application of C# programming, user interaction design, and basic automation using GitHub Actions**.  
 It highlights both technical implementation and problem-solving skills developed throughout the assignment.
 
