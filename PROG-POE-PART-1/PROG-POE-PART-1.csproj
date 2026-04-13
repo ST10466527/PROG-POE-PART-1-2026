@@ -11,9 +11,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <!-- Compile Program.cs -->
-    <Compile Include="Program.cs" />
+    <!-- Program.cs is automatically included, no need to list explicitly -->
+  </ItemGroup>
 
+  <ItemGroup>
     <!-- Ensure greeting.wav is copied to output -->
     <Content Include="greeting.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
