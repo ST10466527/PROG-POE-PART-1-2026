@@ -1,19 +1,19 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <!-- Console application -->
     <OutputType>Exe</OutputType>
-
-    <!-- Target framework (matches GitHub Actions) -->
     <TargetFramework>net8.0</TargetFramework>
-
-    <!-- Enable modern C# features -->
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>
-    <!-- Include audio file for SoundPlayer -->
+    <!-- Required for SoundPlayer -->
+    <PackageReference Include="System.Windows.Extensions" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Audio file -->
     <Content Include="greeting.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
