@@ -3,21 +3,19 @@
   <PropertyGroup>
     <!-- Console application -->
     <OutputType>Exe</OutputType>
-    <!-- Target framework must match workflow -->
+
+    <!-- Target framework (matches GitHub Actions) -->
     <TargetFramework>net8.0</TargetFramework>
+
     <!-- Enable modern C# features -->
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>
-    <!-- All .cs files in this folder (like Program.cs) are automatically included -->
-  </ItemGroup>
-
-  <ItemGroup>
-    <!-- Ensure greeting.wav is copied to output -->
+    <!-- Include audio file for SoundPlayer -->
     <Content Include="greeting.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
 
