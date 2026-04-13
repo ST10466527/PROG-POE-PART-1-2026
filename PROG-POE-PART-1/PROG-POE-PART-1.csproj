@@ -1,18 +1,11 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <!-- Console application -->
     <OutputType>Exe</OutputType>
-    <!-- Target framework must match workflow -->
     <TargetFramework>net8.0</TargetFramework>
-    <!-- Enable modern C# features -->
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
-
-  <ItemGroup>
-    <!-- Program.cs is automatically included, no need to list explicitly -->
-  </ItemGroup>
 
   <ItemGroup>
     <!-- Ensure greeting.wav is copied to output -->
