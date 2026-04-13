@@ -1,38 +1,38 @@
 # CyberSecurity Awareness Bot – PROG POE Part 1 (2026)
 
 ## Project Overview
-This repository contains my Programming POE Part 1 project, developed in **C#** using the **.NET 8.0 framework**. The project is a **CyberSecurity Awareness Bot**, designed to educate users about safe online practices in a simple and interactive way.  
+The **CyberSecurity Awareness Bot** is a console-based application built in **C# with .NET 8.0**.  
+It is designed to educate users about essential cybersecurity practices through an interactive and user-friendly interface.  
 
-The bot welcomes the user with a logo and greeting sound, asks for their name, and then provides a menu of questions. Through friendly responses, it raises awareness about important cybersecurity topics such as password safety, phishing, and safe browsing.
+The bot simulates a conversational experience by greeting the user, requesting their name, and responding to selected questions.  
+Its goal is to make cybersecurity education engaging and accessible, especially for users with limited technical knowledge.
 
 ---
 
-## Purpose of the Bot
-The main goal of this bot is to make cybersecurity education more engaging. Instead of reading static information, users interact with a chatbot that responds in real time. This helps people:
-- Understand basic online safety principles.
-- Learn about common threats like phishing.
-- Build awareness of secure habits in a fun and approachable way.
+## Purpose
+The primary objective of this project is to **promote cybersecurity awareness** in an interactive manner.  
+Instead of presenting static information, the bot allows users to actively engage with key concepts.
+
+Through this interaction, users are able to:
+- Understand fundamental online safety practices  
+- Recognize common threats such as phishing attacks  
+- Develop safer digital habits  
+- Learn in a simple, engaging, and conversational way  
 
 ---
 
 ## Features
-- **Interactive Menu**: Users can ask questions and receive tailored responses.
-- **Personalized Greeting**: The bot asks for the user’s name and responds directly to them.
-- **Audio Integration**: Plays a greeting sound (`greeting.wav`) using the `SoundPlayer` class.
-- **Typing Effect**: Messages appear with a typewriter effect for a more human feel.
-- **Colorful Console Output**: Uses different colors for questions, answers, and warnings to improve readability.
+- **Interactive Question Menu** – Users select from predefined questions and receive informative responses.  
+- **Personalized User Experience** – The bot prompts for the user’s name and responds directly to them.  
+- **Audio Greeting** – A welcome sound (`greeting.wav`) is played using the `SoundPlayer` class.  
+- **Typing Effect Simulation** – Messages are displayed with a typewriter effect for engagement.  
+- **Color-Coded Console Output** – Prompts, responses, and errors are displayed in different colors for readability.  
 
 ---
 
-## Technical Setup
-### Project File (`.csproj`)
-The project is configured to:
-- Target **.NET 8.0**.
-- Output as an executable (`Exe`).
-- Enable **implicit usings** and **nullable reference types**.
-- Include the **System.Windows.Extensions** package (required for `SoundPlayer`).
-- Copy the `greeting.wav` file to the output directory so it is always available when the program runs.
+## Technical Implementation
 
+### Project Configuration (`.csproj`)
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
@@ -54,16 +54,15 @@ The project is configured to:
 </Project>
 ```
 
+- Target Framework: **.NET 8.0**  
+- Output Type: **Console Application (Exe)**  
+- Audio functionality via **System.Windows.Extensions**  
+- Automatic copying of audio file to output directory  
+
 ---
 
-## GitHub Workflow
-A **workflow** is an automated process that runs on GitHub whenever code is pushed or a pull request is made. It ensures the project builds correctly in a clean environment.  
-
-My workflow is called **.NET Build** and it:
-1. Checks out the repository.
-2. Sets up **.NET 8.0**.
-3. Restores dependencies.
-4. Builds the project.
+### GitHub Actions Workflow
+This project includes a **CI workflow** to ensure successful builds whenever changes are pushed.
 
 ```yaml
 name: .NET Build
@@ -98,39 +97,80 @@ jobs:
 
 ---
 
-## Challenges and Learning
-Setting up the workflow was one of the most challenging parts of this project. At first, the workflow failed because the `.csproj` file could not be found. I had to carefully adjust the working directory paths and make sure the dependencies were restored before building. I also struggled with specifying the correct .NET version, but after trial and error, I successfully configured it to run on **.NET 8.0**.  
-
-Through these struggles, I learned the importance of debugging automation scripts, paying attention to detail, and being patient when things don’t work the first time.
+## System Requirements
+- **.NET 8.0 SDK**  
+- **Windows OS** (required for audio playback using `SoundPlayer`)  
 
 ---
 
-## How to Run
-1. Clone the repository.
-2. Ensure you have **.NET 8.0 SDK** installed.
-3. Build and run the project:
+## How to Run the Application
+1. Clone the repository:
    ```bash
-   dotnet build
+   git clone https://github.com/your-username/your-repository-name.git
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd PROG-POE-PART-1
+   ```
+3. Run the application:
+   ```bash
    dotnet run
    ```
-4. Interact with the bot through the console.
+4. Follow the on-screen prompts to interact with the bot.
+
+---
+
+## Screenshot
+
+<img width="1573" height="857" alt="Screenshot 2026-04-13 195835" src="https://github.com/user-attachments/assets/8acd42c5-1d1a-4ad5-ba3f-39ba55f38d9a" />
+<img width="1919" height="1023" alt="Screenshot 2026-04-13 200607" src="https://github.com/user-attachments/assets/2fbf864e-ee9f-4136-b9f9-db05b1f76903" />
+
+---
+
+## Challenges and Learning Outcomes
+During development, several challenges were encountered:
+- Initial build failures due to incorrect file paths and missing project references.  
+- Integration of audio functionality required understanding external package dependencies.  
+
+**Resolutions:**
+- Correctly setting the working directory  
+- Ensuring dependencies were restored before building  
+- Aligning the project with the correct .NET 8.0 configuration  
+
+**Skills Developed:**
+- Debugging build and configuration errors  
+- Understanding CI/CD workflows  
+- Managing project dependencies  
+- Writing cleaner, structured code  
 
 ---
 
 ## Impact
-This project benefits people by making cybersecurity awareness more accessible. Instead of reading long documents, users can interact with a bot that teaches them safe online practices in a conversational way. It’s a small step toward promoting digital safety in everyday life.
+This project contributes to improving **digital safety awareness** by presenting cybersecurity concepts in an interactive format.  
+It demonstrates how simple software solutions can educate users and encourage safer online behavior.
 
 ---
 
-## Future Improvements
-While the current version is functional, there are several ways to expand the project:
-- Add more questions and answers covering wider cybersecurity topics.
-- Include a scoring or quiz system to test user knowledge.
-- Integrate a graphical user interface (GUI) for a more modern experience.
-- Provide links to external resources for deeper learning.
-- Expand audio features with different sound effects for responses.
+## Future Enhancements
+- Expanding the range of cybersecurity topics  
+- Implementing a quiz or scoring system  
+- Developing a graphical user interface (GUI)  
+- Integrating external educational resources  
+- Enhancing audio and interaction features  
+- Introducing AI-driven responses for dynamic conversations  
 
 ---
 
 ## Author
-Developed by **Silindokuhle**, second‑year Diploma in Software Development student, Cape Town, South Africa.  
+**Silindokuhle Makunga**  
+Second-Year Diploma in Software Development  
+Cape Town, South Africa  
+
+---
+
+## 🏁 Final Notes
+This project demonstrates the **practical application of C# programming, user interaction design, and basic automation using GitHub Actions**.  
+It highlights both technical implementation and problem-solving skills developed throughout the assignment.
+
+---
+
