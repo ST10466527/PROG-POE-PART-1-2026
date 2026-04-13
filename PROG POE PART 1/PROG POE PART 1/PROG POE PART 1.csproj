@@ -1,30 +1,26 @@
-name: .NET CI
+<Project Sdk="Microsoft.NET.Sdk">
 
-on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <RootNamespace>PROG_POE_PART_1</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <StartupObject>Program</StartupObject>
+  </PropertyGroup>
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
+  <ItemGroup>
+    <None Remove="greeting.wav" />
+  </ItemGroup>
 
-    steps:
-    - name: Checkout repository
-      uses: actions/checkout@v3
+  <ItemGroup>
+    <Content Include="greeting.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
 
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v3
-      with:
-        dotnet-version: '8.0.x'   # Change to 6.0.x or 7.0.x if your project targets that version
+  <ItemGroup>
+    <PackageReference Include="System.Windows.Extensions" Version="8.0.0" />
+  </ItemGroup>
 
-    - name: Restore dependencies
-      run: dotnet restore "PROG POE PART 1/PROG POE PART 1.csproj"
-
-    - name: Build project
-      run: dotnet build "PROG POE PART 1/PROG POE PART 1.csproj" --no-restore --configuration Release
-
-    # Comment out this section if you don’t have tests yet
-    - name: Run tests
-      run: dotnet test "PROG POE PART 1/PROG POE PART 1.csproj" --no-build --verbosity normal
+</Project>
