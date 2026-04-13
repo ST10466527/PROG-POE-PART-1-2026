@@ -1,4 +1,4 @@
-name: .NET CI
+name: .NET Build
 
 on:
   push:
@@ -8,7 +8,7 @@ on:
 
 jobs:
   build:
-    runs-on: windows-latest   # Windows runner
+    runs-on: windows-latest
 
     steps:
     - name: Checkout repository
@@ -20,11 +20,7 @@ jobs:
         dotnet-version: '8.0.x'
 
     - name: Restore dependencies
-      run: dotnet restore ".\\PROG POE PART 1\\PROG POE PART 1.csproj"
+      run: dotnet restore "./PROG POE PART 1/PROG POE PART 1.csproj"
 
     - name: Build project
-      run: dotnet build ".\\PROG POE PART 1\\PROG POE PART 1.csproj" --no-restore --configuration Release
-
-    # Tests disabled for now
-    # - name: Run tests
-    #   run: dotnet test ".\\PROG POE PART 1\\PROG POE PART 1.csproj" --no-build --verbosity normal
+      run: dotnet build "./PROG POE PART 1/PROG POE PART 1.csproj" --no-restore
