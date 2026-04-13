@@ -8,7 +8,7 @@ on:
 
 jobs:
   build:
-    runs-on: windows-latest   # Windows runner uses PowerShell
+    runs-on: windows-latest   # Windows runner
 
     steps:
     - name: Checkout repository
