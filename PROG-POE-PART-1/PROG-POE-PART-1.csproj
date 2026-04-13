@@ -1,17 +1,20 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
+    <!-- This is a console application -->
     <OutputType>Exe</OutputType>
+    <!-- Target .NET 8.0 to match your workflow -->
     <TargetFramework>net8.0</TargetFramework>
+    <!-- Enable modern C# features -->
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>
-    <!-- Copy greeting.wav to output so SoundPlayer can find it -->
-    <None Include="greeting.wav">
+    <!-- Ensure greeting.wav is copied to output so SoundPlayer can find it -->
+    <Content Include="greeting.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
+    </Content>
   </ItemGroup>
 
 </Project>
