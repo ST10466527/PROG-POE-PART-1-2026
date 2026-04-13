@@ -20,7 +20,9 @@ jobs:
         dotnet-version: '8.0.x'
 
     - name: Restore dependencies
-      run: dotnet restore "./PROG POE PART 1/PROG POE PART 1.csproj"
+      working-directory: "./PROG POE PART 1"
+      run: dotnet restore "PROG POE PART 1.csproj"
 
     - name: Build project
-      run: dotnet build "./PROG POE PART 1/PROG POE PART 1.csproj" --no-restore
+      working-directory: "./PROG POE PART 1"
+      run: dotnet build "PROG POE PART 1.csproj" --no-restore
